@@ -1,5 +1,8 @@
 # shopping_cart.py
 
+from math import prod
+
+
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -36,7 +39,29 @@ def to_usd(my_price):
     """
     return f"${my_price:,.2f}" #> $12,000.71
 
+while True: 
 
-# TODO: write some Python code here to produce the desired output
+    #TODO: write some Python code here to produce the desired output
+    #ASK FOR USER INPUT
 
-print(products)
+    product_id = input("Please input a product identifier: ")
+
+    print(product_id)
+
+    if(product_id) == "DONE":
+        break
+
+    #LOOK UP CORRESPONDING PRODUCTS
+
+
+    #Print product that has equivalent product id
+
+    matching_products = []
+
+    for x in products:
+        if str(x["id"]) == str(product_id):
+            matching_products.append(x)
+
+
+    matching_product = matching_products[0]
+    print(matching_product["name"], matching_product["price"])

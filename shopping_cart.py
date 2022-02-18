@@ -88,6 +88,7 @@ print("#> SUBTOTAL: " + str(to_usd(total_price)))
 tax = tax_rate * total_price
 print("#> TAX: " + str(to_usd(tax)))
 print("#> ---------------------------------")
+print("#> THANKS, SEE YOU AGAIN SOON!")
 print("#> ---------------------------------")
 
 

@@ -65,6 +65,24 @@ for id in selected_ids:
     total_price = total_price + matching_product["price"]
 
 
+#PRINTING OUTPUT
+
+from datetime import datetime #Resource: https://stackoverflow.com/questions/1759455/how-can-i-account-for-period-am-pm-using-strftime
+
+now = datetime.now()
+date_format = "%Y-%m-%d %H:%M %p"
+
+print(now)
+
+print("#> ---------------------------------")
+print("#> LARA'S ONE-STOP SHOP")
+print("#> WWW.LARA'S-ONE-STOP-SHOP.COM")
+print("#> ---------------------------------")
+print("#> CHECKOUT AT:", str(now.strftime(date_format)))
+print("#> ---------------------------------")
+print("#> ---------------------------------")
+print("#> ---------------------------------")
+print("#> ---------------------------------")
 
 
 

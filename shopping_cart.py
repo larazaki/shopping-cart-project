@@ -57,12 +57,6 @@ while True:
 
    
 #LOOK UP CORRESPONDING PRODUCTS AND STORE
-matching_products = []
-
-for id in selected_ids:
-    matching_products = [x for x in products if str(x["id"]) == str(id)]
-    matching_product = matching_products[0]
-    total_price = total_price + matching_product["price"]
 
 
 #PRINTING OUTPUT
@@ -80,7 +74,16 @@ print("#> WWW.LARA'S-ONE-STOP-SHOP.COM")
 print("#> ---------------------------------")
 print("#> CHECKOUT AT:", str(now.strftime(date_format)))
 print("#> ---------------------------------")
+print("#> SELECTED PRODUCTS:")
+
+for id in selected_ids:
+    matching_products = [x for x in products if str(x["id"]) == str(id)]
+    matching_product = matching_products[0]
+    total_price = total_price + matching_product["price"]
+    print("... " + str(matching_product["name"]) + " (" + str(to_usd(matching_product["price"])) + ")")
+
 print("#> ---------------------------------")
+print("SUBTOTAL: " + str(to_usd(total_price)))
 print("#> ---------------------------------")
 print("#> ---------------------------------")
 

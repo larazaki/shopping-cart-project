@@ -65,6 +65,7 @@ from datetime import datetime #Resource: https://stackoverflow.com/questions/175
 
 now = datetime.now()
 date_format = "%Y-%m-%d %H:%M %p"
+tax_rate = 0.08731381613
 
 print(now)
 
@@ -83,7 +84,9 @@ for id in selected_ids:
     print("... " + str(matching_product["name"]) + " (" + str(to_usd(matching_product["price"])) + ")")
 
 print("#> ---------------------------------")
-print("SUBTOTAL: " + str(to_usd(total_price)))
+print("#> SUBTOTAL: " + str(to_usd(total_price)))
+tax = tax_rate * total_price
+print("#> TAX: " + str(to_usd(tax)))
 print("#> ---------------------------------")
 print("#> ---------------------------------")
 

@@ -1,6 +1,11 @@
 # shopping_cart.py
 
 from math import prod
+import os
+from dotenv import load_dotenv
+
+load_dotenv() #> invoking this function loads contents of the ".env" file into the script's environment...
+
 
 
 products = [
@@ -65,7 +70,9 @@ from datetime import datetime #Resource: https://stackoverflow.com/questions/175
 
 now = datetime.now()
 date_format = "%Y-%m-%d %H:%M %p"
-tax_rate = 0.08731381613
+#tax_rate = 0.08731381613
+tax_rate = float(os.getenv("TAX_RATE"))
+
 
 print(now)
 
@@ -86,7 +93,10 @@ for id in selected_ids:
 print("#> ---------------------------------")
 print("#> SUBTOTAL: " + str(to_usd(total_price)))
 tax = tax_rate * total_price
+
 print("#> TAX: " + str(to_usd(tax)))
+grand_total = total_price + tax
+print("#> TOTAL: " + str(to_usd(grand_total)))
 print("#> ---------------------------------")
 print("#> THANKS, SEE YOU AGAIN SOON!")
 print("#> ---------------------------------")
